@@ -1,0 +1,109 @@
+User story 1
+
+Feature: Navigate to the '7 benefits of workforce analytics for business' article on Humanforce website
+
+Acceptance Criteria: 
+1. Viewer should be able to access to the human force website
+2. Viewer should see the link or button for Time and Attendance page
+3. Viewer should be able to see articles/contents load successfully from the Time and Attendance page
+4. Viewer should be able to access the article '7 benefits of workforce analytics for business' from the Time and Attendance page
+5. Viewer should see the article '7 benefits of workforce analytics for business' content to load properly (readable and no broken images)
+ 
+
+Test Cases (Gherkin Syntax)
+
+Scenario: As a viewer, I should be able to access the human force website
+Given Viewer wants to visit the Humanforce website
+When Viewer inputs the website URL https://www.humanforce.com/
+Then Viewer should see website load successfully 
+
+Scenario: As a viewer, I would like to access the time and attendance page
+Given Viewer is in the website
+When Viewer clicks the 'Time & Attendance' link
+Then Viewer should be redirected to the "Time & Attendance" page
+And the "Time & Attendance" page should load successfully
+
+Scenario: As a viewer, I would like to access the'7 benefits of workforce analytics for business' article 
+Given Viewer is in the 'Time & Attendance' page
+When Viewer scroll to the bottom of the page 
+Then Viewer should see an article titled "7 benefits of workforce analytics for business"
+When Viewer click on the article titled "7 benefits of workforce analytics for business"
+Then Viewer should be redirected to the article page
+And the article should load successfully
+
+
+
+User Story 3 
+Feature: Using HF Academy to access help articles
+
+Acceptance Criteria: 
+1. Manager should be able to log in successfully to the <tenant site> using its valid credential
+2. Manager should see login dashboard properly
+3. After logging in, manager should see the  'HF Academy' button located at the bottom left corner of the page
+4. Manager should be able to see HF academy modal after clicking it
+5. Manager should be able to input 'Personal' using the search field of HF academy modal
+6. After scrolling down to the search result, Manager should see an article entitled 'How do I view or update my details' article
+7. Manager should be able access and read the 'How do I view or update my details' article after clicking it
+
+
+Background: Given Manager is logged into the "<test tenant>" site with valid credentials
+
+Scenario: As a manager, I would like to access 'HF Academy' button and open the modal
+	Given Manager is in the homepage
+	When Manager clicks the "HF Academy" button located at the bottom left of the page    
+	Then Manager should see the HF Academy modal
+
+Scenario: As a manager, I would like to search articles regarding 'Personal'
+	Given the HF Academy modal is open
+	When Manager inputs for "Personal" in the search field
+	Then Manager should see all search results related to "Personal"
+	And the article titled "How do I view or update my details" should be visible
+
+Scenario: As a manager, I should be able to open the article "How do I view or update my details"
+	Given the search results show the article "How do I view or update my details"
+	When Manager scrolls down and click on the article titled "How do I view or update my details"
+	Then the article should open in the new window
+	And Manager should be able to read the content of the article
+
+User Story 4 
+Feature: Admin Manages Area table
+
+Background: Given Admin is logged in the "<Test tenant>" site with valid credentials
+
+Acceptance Criteria
+1. Admin should be able to access the Area page by navigating to <Test tenant>/Admin/Area
+2. Admin should be able to see a button or option labeled 'Add Area' to create a new area
+3. Admin should see the table list of areas
+4. Admin should be able to update a details from an existing area details
+5. Admin should be able to delete an existing area in the list
+6. Admin should be able to restore a deleted area by using the undelete function
+
+Scenario: As Admin I should be able to add a New Area
+	Given Admin is in the Area page
+	When Admin clicks the "Add Area" button
+	And Admin fills in the new area details with valid data
+	And click the "Save" button
+	Then the new area should be added to the list of areas
+
+Scenario: As Admin I should be able to update an existing Area
+	Given Admin is in the Area page
+	When Admin clicks the 'Edit' button next area details
+	And Admin updates area detail  
+	And Admin click the "Save" button
+	Then Admin should see the area updated in the list with the new details
+
+Scenario: As Admin I should be able to delete an existing Area
+	Given Admin is in the Area page
+	When Admin clicks the 'delete' button next area details
+	And Admin updates area detail  
+	And Admin click the "Confirm" button
+	Then Admin should not see the area in the list anymore
+
+Scenario: As Admin I should be able to undelete an Area
+	Given Admin is in the Area page
+	When Admin clicks the 'undelete' button 
+	And clicks 'Restore' button next to the area detail  
+	Then Admin see the deleted area restored in the Area list again
+
+
+ 
