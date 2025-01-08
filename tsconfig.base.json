@@ -1,0 +1,24 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "module": "CommonJS",
+      "rootDir": ".",
+      "sourceMap": true,
+      "declaration": false,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "importHelpers": true,
+      "target": "es2015",
+      "lib": ["es2017", "dom"],
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "baseUrl": "./",
+      "paths": {
+        "@qaforge/backoff": ["libs/backoff/src/index.ts"],
+        "@qaforge/object-id": ["libs/object-id/src/index.ts"],
+      }
+    },
+    "exclude": ["node_modules", "tmp"]
+  }
+  

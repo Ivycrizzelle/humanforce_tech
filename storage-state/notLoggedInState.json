@@ -1,0 +1,18 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "https://humanforce.com",
+      "localStorage": [
+        {
+          "name": "country-selected",
+          "value": "false"
+        },
+        {
+          "name": "nuxt-color-mode",
+          "value": "light"
+        }
+      ]
+    }
+  ]
+}
